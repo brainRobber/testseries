@@ -47,3 +47,10 @@ def landing(request):
     else:
         return HttpResponse(json.dumps(resp), contect_type='application/json')
 
+
+def test(request):
+    context = {}
+    return render(request, 'basic/test_display.html', context);
+    
+
+

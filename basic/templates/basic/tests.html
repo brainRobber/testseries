@@ -1,9 +1,134 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Sagar Patel</title>
-	</head>
-	<body>
-		<h1>sagar npatel<h1>
-	</body>
-</html>
+
+{% extends "basic/index.html" %}
+{% block content %}
+ <style>
+	.payments{
+		margin: auto;
+		margin-top:50px;
+		border-collapse: collapse;
+
+	}
+	.payments th, td{ 
+		width:220px;
+		padding: 10px;
+		text-align: center;
+		background: #F1F1F2;
+		border-bottom: 1px solid #DFDADA;
+		box-shadow: 2px 2px 2px #888888;
+		
+	}
+	.payments td{
+		background: aliceblue;
+		
+		}		   
+	.phone a{
+		text-decoration: none;
+	}	 	
+</style>
+
+	<div id="payments">
+	     
+	     
+	    <table class="payments">
+		    <thead>
+			    <th>Test Name</th>
+			    <th>Interval</th>
+			    <th>Syllabus</th>
+	            <th>Duration</th>
+	            <th>Score</th>
+		    </thead>
+
+		    <tbody>
+     
+	            <tr class="payment" id="payment">
+	                <td class="payment_info">
+					    <div class="phone" id="1"><a href="test/1">Part Test 1 </a></div>
+	                </td>
+
+	                <td class="caller_info">
+	                	<div class="caller"><span> start Date </span> To <span> End Date</span></div>
+	                </td>
+
+	                <td class="payment_mode">
+	                    <div>Lows of Motions, Unit and Dimention, Force, Work Power and Energy</div>
+	                </td>
+
+	                <td class="status" id="status" style="text-transformrm: capitalise;">
+	                    <div>2 hr </div>
+	                </td>
+
+	                <td class="action">
+	                    <div id="processing" style="">30 Marks</div>
+	                </td>
+
+	            </tr>
+
+	            <tr class="payment" id="payment">
+	                <td class="payment_info">
+					    <div class="phone" id="2"><a href="test/2">Part Test 2 </a></div>
+	                </td>
+
+	                <td class="caller_info">
+	                	<div class="caller"><span> start Date </span> To <span> End Date</span></div>
+	                </td>
+
+	                <td class="payment_mode">
+	                    <div>Kinematics</div>
+	                </td>
+
+	                <td class="status" id="status" style="text-transformrm: capitalise;">
+	                    <div>2.5 hr </div>
+	                </td>
+
+	                <td class="action">
+	                    <div id="processing" style="">30 Marks</div>
+	                </td>
+
+	            </tr>
+
+
+	            <tr class="payment" id="payment">
+	                <td class="payment_info">
+					    <div class="phone" id="3"><a href="#">Part Test 3 </a></div>
+	                </td>
+
+	                <td class="caller_info">
+	                	<div class="caller"><span> start Date </span> To <span> End Date</span></div>
+	                </td>
+
+	                <td class="payment_mode">
+	                    <div>Vector</div>
+	                </td>
+
+	                <td class="status" id="status" style="text-transformrm: capitalise;">
+	                    <div>2 hr </div>
+	                </td>
+
+	                <td class="action">
+	                    <div id="processing" style="">40 Marks</div>
+	                </td>
+
+	            </tr>
+	             
+	        </tbody>
+	    <table>
+	    
+	</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+	<script type="text/javascript">
+		$('.phone').click(function () {
+			// body...
+
+			console.log($(this).attr("id"));
+		});
+
+	</script>
+
+{% endblock %}
+
+

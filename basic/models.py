@@ -12,17 +12,17 @@ class Userprofile(models.Model):
 class Test_score(models.Model):
     test_user = models.ForeignKey('Userprofile')
     test_id = models.ForeignKey('Test')
-    score = models.DecimalField()
+    score = models.DecimalField(max_digits=5, decimal_places=0)
 
     def __unicode__(self):
         return '%s, %s' % (self.test_user.__unicode__(), self.test_id.__unicode__())
 
 class Breakup(models.Model):
     test_score = models.ForeignKey('Test_score')
-    single_choice_score = models.DecimalField()
-    multiple_choice_score = models.DecimalField()
-    integer_type_score = models.DecimalField()
-    list_type_score = models.DecimalField()
+    single_choice_score = models.DecimalField(max_digits=5, decimal_places=0)
+    multiple_choice_score = models.DecimalField(max_digits=5, decimal_places=0)
+    integer_type_score = models.DecimalField(max_digits=5, decimal_places=0)
+    list_type_score = models.DecimalField(max_digits=5, decimal_places=0)
 
     def __unicode__(self):
         return test_score.__unicode__()
