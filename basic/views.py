@@ -1,7 +1,11 @@
+import json
+
 from django.shortcuts import render
+from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.contrib.auth.models import *
+from basic.models import *
 # Create your views here.
 
 def index(request):
@@ -27,17 +31,19 @@ def landing(request):
             b.save()
         else:
             errors.append("username already taken")
+    #signin
     else:
         k = User.objects.filter(username=_username)
-        pas = k.password
+    
     if errors:
         resp['status'] = 'error'
         resp['errors'] = errors
     else:
         resp['status'] = 'success'
     if resp['status'] == 'success':
+        _tests = Test.objects.all()
         return render_to_response('basic/tests.html',
-                {'username':_username}, context_instance = RequestContext(request))
+                {'username':_username, 'tests':_tests}, context_instance = RequestContext(request))
     else:
         return HttpResponse(json.dumps(resp), contect_type='application/json')
 
