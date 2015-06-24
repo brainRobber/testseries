@@ -51,9 +51,4 @@ class Choice(models.Model):
     def __unicode__(self):
         return self.solution
 
-class Test_result(models.Model):
-    user = models.ForeignKey('User')
-    test = models.ForeignKey('Test')
-    
-    def __unicode__(self):
-        return self.user
+
