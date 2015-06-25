@@ -48,8 +48,8 @@ def landing(request):
         return HttpResponse(json.dumps(resp), contect_type='application/json')
 
 
-def test(request):
-    context = {}
+def test(request, id):
+    context = {"test_id":id}
     return render(request, 'basic/test_display.html', context);
     
 
